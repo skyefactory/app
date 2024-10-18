@@ -1,1 +1,7 @@
 /target
+/build output
+/.devcontainer
+/.github
+*.mp3
+*.wav
+*.sh

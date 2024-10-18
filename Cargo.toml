@@ -4,8 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-ffmpeg-next = {path="../rust-ffmpeg-master", features=["codec", "format"]}
-log = "*"
-pretty_env_logger="*"
-anyhow="*"
-eframe="*"
+log = "0.4.22"
+pretty_env_logger="0.5.0"
+anyhow="1.0.90"
+eframe="0.29.1"
+rfd="*"
+futures = "0.3.31"
