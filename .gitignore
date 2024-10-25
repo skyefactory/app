@@ -1,5 +1,6 @@
 /target
-/build output
+/build
+/scripts
 /.devcontainer
 /.github
 *.mp3
