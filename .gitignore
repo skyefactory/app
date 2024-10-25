@@ -3,6 +3,8 @@
 /scripts
 /.devcontainer
 /.github
+/src/ffmpeg-linux
+/src/ffmpeg-windows
 *.mp3
 *.wav
 *.sh
