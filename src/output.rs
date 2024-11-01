@@ -1,13 +1,19 @@
 use crate::consts;
-use std::{fmt::{Display,Formatter,Result},path::PathBuf};
 use rfd::FileHandle;
+use std::{
+    fmt::{Display, Formatter, Result},
+    path::PathBuf,
+};
 
 #[derive(PartialEq, Debug, Clone)]
 pub enum OutputType {
     NotSelected,
     PNG,
     JPG,
-    WEBM,
+    BMP,
+    GIF,
+    SVG,
+    RAW,
 }
 impl Default for OutputType {
     fn default() -> Self {
@@ -16,7 +22,7 @@ impl Default for OutputType {
 }
 
 impl Display for OutputType {
-    fn fmt(&self, f: &mut Formatter) ->Result {
+    fn fmt(&self, f: &mut Formatter) -> Result {
         write!(f, "{:?}", self)
     }
 }
@@ -49,8 +55,8 @@ impl Output {
         retrn
     }
     pub async fn save_file_dialog(&mut self, ext: OutputType) -> consts::Result {
-        use rfd::AsyncFileDialog;
         use anyhow::anyhow;
+        use rfd::AsyncFileDialog;
         self.set_ext(ext.to_string());
         match AsyncFileDialog::new()
             .add_filter("Output", &[format!("{}", self.ext)])
